@@ -4,8 +4,6 @@ IntMyArr::IntMyArr(const IntMyArr& other)
 {
 	this->m_count = other.m_count;
 	this->m_size = other.m_size;
-
-	if (this->p_arr != nullptr) { delete[]this->p_arr; }
 	this->p_arr = new int[m_size];
 
 	for (int i = 0; i < m_count; i++)
@@ -28,7 +26,7 @@ IntMyArr::~IntMyArr() { delete[] p_arr; };
 IntMyArr& IntMyArr::operator=(const IntMyArr& other)
 {
 	if (this == &other) { return *this; }
-
+	
 	this->m_count = other.m_count;
 	this->m_size = other.m_size;
 
