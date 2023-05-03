@@ -1,5 +1,18 @@
 ﻿#include "IntMyArr.h"
 
+IntMyArr::IntMyArr(const IntMyArr& other)
+{
+	this->m_count = other.m_count;
+	this->m_size = other.m_size;
+	
+	if (this->p_arr != nullptr) { delete[]this->p_arr; }
+	this->p_arr = new int[m_size];
+
+	for (int i = 0; i < m_count; i++)
+	{
+		p_arr[i] = other.p_arr[i];
+	}
+}
 
 IntMyArr::IntMyArr() :m_size(0), m_count(0)
 	{
@@ -10,18 +23,25 @@ IntMyArr::IntMyArr(int size) :m_size(size), m_count(0)
 		p_arr = new int[m_size];
 	}
 
-	IntMyArr::~IntMyArr() { delete p_arr; };
+	IntMyArr::~IntMyArr() { delete[] p_arr; };
 
-	void IntMyArr::copy_arr(IntMyArr& arr_in)
+	IntMyArr& IntMyArr::operator=(const IntMyArr& other)
 	{
-		this->m_count = arr_in.m_count;
-		this->m_size = arr_in.m_size;
+		if (this == &other) { return *this; }
+
+		this->m_count = other.m_count;
+		this->m_size = other.m_size;
+
+		if (this->p_arr != nullptr) { delete[]this->p_arr; }
 		this->p_arr = new int[m_size];
+
 		for (int i = 0; i < m_count; i++)
 		{
-			p_arr[i] = arr_in.p_arr[i];
+			p_arr[i] = other.p_arr[i];
 		}
-	}
+
+		return *this;
+	};
 
 	void IntMyArr::delete_element(int x)
 	{

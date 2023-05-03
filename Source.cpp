@@ -17,8 +17,14 @@ int main()
 	arr.add_element(3);
 	arr.add_element(4);
 	arr.add_element(29);
+
 	IntMyArr arr1;
-	arr1.copy_arr(arr);
+
+	IntMyArr arr3;
+
+	IntMyArr arr4(arr);
+	
+	arr3 = arr1 = arr;
 	arr1.delete_element(2);
 	std::cout << arr1.get_element(3);
 	}

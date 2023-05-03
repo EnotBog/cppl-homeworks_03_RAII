@@ -5,10 +5,10 @@ class IntMyArr
 {
 public:
 	IntMyArr();
+	IntMyArr(const IntMyArr& other);
 	IntMyArr(int size);
+	IntMyArr& operator=(const IntMyArr& other);
 	~IntMyArr();
-
-	void copy_arr(IntMyArr& arr_in);
 
 	void delete_element(int x);
 
