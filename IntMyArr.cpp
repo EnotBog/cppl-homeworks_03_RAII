@@ -1,4 +1,4 @@
-#include "IntMyArr.h"
+ï»¿#include "IntMyArr.h"
 
 
 IntMyArr::IntMyArr() :m_size(0), m_count(0)
@@ -25,14 +25,14 @@ IntMyArr::IntMyArr(int size) :m_size(size), m_count(0)
 
 	void IntMyArr::delete_element(int x)
 	{
-		if (p_arr == nullptr) { throw std::length_error("Îòñóòñâóåò ìàññèâ"); }
-		if (x >= m_count || x < 0) { throw std::range_error("Âûõîä çà ïğåäåëû ìàññèâà!"); }
+		if (p_arr == nullptr) { throw std::length_error("ĞÑ‚ÑÑƒÑ‚ÑĞ²ÑƒĞµÑ‚ Ğ¼Ğ°ÑÑĞ¸Ğ²"); }
+		if (x >= m_count || x < 0) { throw std::range_error("Ğ’Ñ‹Ñ…Ğ¾Ğ´ Ğ·Ğ° Ğ¿Ñ€ĞµĞ´ĞµĞ»Ñ‹ Ğ¼Ğ°ÑÑĞ¸Ğ²Ğ°!"); }
 		if (x == m_count) { p_arr[x] = 0; m_count -= 1; }
-		//int ind = 1 + x; // èíäåêñ ñëåäóşùåãî çíà÷åíèÿ çà óäàëÿåìûì
-		int count_move = m_count - x;// êîëëè÷åñòâî ıëåìåíòîâ ê äâèæåíèş
+		//int ind = 1 + x; // Ğ¸Ğ½Ğ´ĞµĞºÑ ÑĞ»ĞµĞ´ÑƒÑÑ‰ĞµĞ³Ğ¾ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ñ Ğ·Ğ° ÑƒĞ´Ğ°Ğ»ÑĞµĞ¼Ñ‹Ğ¼
+		int count_move = m_count - x;// ĞºĞ¾Ğ»Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ² Ğº Ğ´Ğ²Ğ¸Ğ¶ĞµĞ½Ğ¸Ñ
 		m_count -= 1;
-		//ñêîëüòêî ıëåìåíòîâ ïåğåäâèíóòü 5[4] óæàëèòü òğåòèé [2] 4-2 2 
-		//èíäåêñ êóäà äâèãàòü
+		//ÑĞºĞ¾Ğ»ÑŒÑ‚ĞºĞ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ² Ğ¿ĞµÑ€ĞµĞ´Ğ²Ğ¸Ğ½ÑƒÑ‚ÑŒ 5[4] ÑƒĞ¶Ğ°Ğ»Ğ¸Ñ‚ÑŒ Ñ‚Ñ€ĞµÑ‚Ğ¸Ğ¹ [2] 4-2 2 
+		//Ğ¸Ğ½Ğ´ĞµĞºÑ ĞºÑƒĞ´Ğ° Ğ´Ğ²Ğ¸Ğ³Ğ°Ñ‚ÑŒ
 
 		for (int i = x; count_move > 0; i++, count_move--)
 			p_arr[i] = p_arr[i + 1];
@@ -54,8 +54,8 @@ IntMyArr::IntMyArr(int size) :m_size(size), m_count(0)
 
 	int IntMyArr::get_element(int x) const
 	{
-		if (p_arr == nullptr) { throw std::length_error("Îòñóòñâóåò ìàññèâ"); }
-		if (x >= m_count || x < 0) { throw std::range_error("Âûõîä çà ïğåäåëû ìàññèâà!"); }
+		if (p_arr == nullptr) { throw std::length_error("ĞÑ‚ÑÑƒÑ‚ÑĞ²ÑƒĞµÑ‚ Ğ¼Ğ°ÑÑĞ¸Ğ²"); }
+		if (x >= m_count || x < 0) { throw std::range_error("Ğ’Ñ‹Ñ…Ğ¾Ğ´ Ğ·Ğ° Ğ¿Ñ€ĞµĞ´ĞµĞ»Ñ‹ Ğ¼Ğ°ÑÑĞ¸Ğ²Ğ°!"); }
 		return p_arr[x];
 	}
 

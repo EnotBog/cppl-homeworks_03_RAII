@@ -1,4 +1,4 @@
-
+ï»¿
 #include <windows.h>
 #include <locale.h>
 #include "IntMyArr.h"
@@ -36,7 +36,7 @@ int main()
 
 	catch (const std::exception&)
 	{
-		std::cout << "Ïðî÷èå îøèáêè" << std::endl;
+		std::cout << "ÐŸÑ€Ð¾Ñ‡Ð¸Ðµ Ð¾ÑˆÐ¸Ð±ÐºÐ¸" << std::endl;
 	}
 	return 0;
 }
